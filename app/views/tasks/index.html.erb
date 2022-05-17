@@ -2,13 +2,13 @@
 
 <ul class="list-checked">
   <% @tasks.each do |task| %>
-    <li>
+    <li class="list-checked-item">
       <% if task.completed %>
-        <i class="fa-solid fa-square-check"></i>
+        <i class="fa-solid fa-square-check green"></i>
       <% else %>
-        <i class="fa-solid fa-square"></i>
+        <i class="fa-solid fa-square light-black"></i>
       <% end %>
-      <%= link_to task.title, task_path(task.id) %>
+      <%= link_to task.title, task_path(task.id), class: "task-title" %>
       <%= link_to task_path(task), method: :delete, data: { confirm: "Are you sure?" } do %>
         <i class='fa-solid fa-trash-can'></i>
       <% end %>
